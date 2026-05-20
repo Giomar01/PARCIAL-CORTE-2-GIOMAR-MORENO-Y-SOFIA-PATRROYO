@@ -1,7 +1,7 @@
 #include "../include/Usuario.h"
 
-Usuario:: Usuario(std::string nombre, std::string rol, int documento, int edad, int codigoUsuario, int cantidadLibrosPrestados )
-    :Persona(nombre, rol, documento, edad ){
+Usuario::Usuario(std::string nombre, int documento, int edad, int codigoUsuario, int cantidadLibrosPrestados )
+    :Persona(nombre, documento, edad ){
         this->codigoUsuario=codigoUsuario;
         this->cantidadLibrosPrestados=cantidadLibrosPrestados;
     }
@@ -18,5 +18,5 @@ Usuario:: Usuario(std::string nombre, std::string rol, int documento, int edad, 
         return cantidadLibrosPrestados;
      }
      void Usuario::mostrarInformacion(){
-        
+
      }
