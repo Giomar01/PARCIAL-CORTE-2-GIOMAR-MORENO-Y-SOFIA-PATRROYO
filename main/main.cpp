@@ -98,6 +98,30 @@ int main(){
 
                 break;
             }
+            case 3:{
+
+                std::string titulo;
+                std::string autor;
+                int codigoLibro;
+
+                std::cout << std::endl;
+                std::cout << "Titulo: ";
+                getline(std::cin >> std::ws, titulo);
+
+                std::cout << "Autor: ";
+                getline(std::cin >> std::ws, autor);
+
+                std::cout << "Codigo Libro: ";
+                std::cin >> codigoLibro;
+
+                Libro nuevoLibro(titulo,autor,"Disponible",codigoLibro);
+
+                libros.push_back(nuevoLibro);
+
+                std::cout << "Libro registrado correctamente" << std::endl;
+
+                break;
+            }
 
 
 
