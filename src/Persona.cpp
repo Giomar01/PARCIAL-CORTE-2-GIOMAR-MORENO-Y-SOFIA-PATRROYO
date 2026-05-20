@@ -5,20 +5,30 @@ Persona::Persona(std::string nombre, int documento, int edad) {
      this->documento=documento;
      this->edad=edad;
 }
-/**
- * @brief Constructor con ciertos parametros.
- * @param nombre Nombre de la persona.
- * @param documento Documento de identidad.
- * @param edad Edad de la persona.
- */
-Persona::Persona(std::string nombre,int documento, int edad) {
-    this->nombre = nombre;
-    this->documento = documento;
-    this->edad = edad;
-}
-/**
- * @brief Destructor virtual de la clase Persona.
- */
-Persona::~Persona() {
+    Persona::~Persona() {
 
-}
+    }
+
+    void Persona::setNombre(std::string nombre) {
+     this->nombre = nombre;
+    }
+
+    void Persona::setDocumento(int documento) {
+    this->documento = documento;
+    }
+
+    void Persona::setEdad(int edad) {
+     this->edad = edad;
+    }
+
+    std::string Persona::getNombre() {
+     return nombre;
+    }
+
+    int Persona::getDocumento() {
+     return documento;
+    }
+
+    int Persona::getEdad() {
+     return edad;
+    }

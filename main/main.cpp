@@ -114,7 +114,7 @@ int main(){
                 std::cout << "Codigo Libro: ";
                 std::cin >> codigoLibro;
 
-                Libro nuevoLibro(titulo,autor,"Disponible",codigoLibro);
+                Libro nuevoLibro(titulo,autor,"Disponible", codigoLibro);
 
                 libros.push_back(nuevoLibro);
 
@@ -122,6 +122,25 @@ int main(){
 
                 break;
             }
+            case 4:{
+
+                int codigoLibro;
+
+                std::cout << std::endl;
+                std::cout << "Codigo del libro: ";
+                std::cin >> codigoLibro;
+
+                for(int i = 0; i < libros.size(); i++){
+
+                if(libros[i].getCodigoLibro() == codigoLibro){
+
+                libros[i].prestarLibro();
+                }
+                }
+
+                 break;
+            }
+            
 
 
 
