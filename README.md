@@ -118,7 +118,7 @@ Proyecto/
 
 ## Menú del sistema
 
-
+```bash
 ========= BIBLIOTECA =========
 
 Registrar usuario
@@ -129,7 +129,7 @@ Devolver libro
 Mostrar usuarios
 Mostrar libros
 Salir
-
+```
 ---
 
 ## Autores
