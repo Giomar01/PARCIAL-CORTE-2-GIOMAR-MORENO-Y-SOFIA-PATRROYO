@@ -27,7 +27,7 @@ class Libro{
      * @param codigoLibro
      * 
      */
-    Libro(std:: string titulo, std:: string autor, std:: string disponible, int codigoLibro,);
+    Libro(std:: string titulo, std:: string autor, std:: string disponible, int codigoLibro);
 //Metodos 
 
 /**
