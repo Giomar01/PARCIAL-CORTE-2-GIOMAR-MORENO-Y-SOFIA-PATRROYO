@@ -27,7 +27,50 @@ class Persona{
 
     virtual ~Persona();
 
-    
+    /**
+     * @brief modifica el nombre de la persona.
+     * @param nombre nuevo nombre.
+     */
+    void setNombre(std::string nombre);
+    /**
+     * @brief modifica el rol que desempeña la perosna.
+     * @param rol nuevo rol.
+     */
+    void setRol(std::string rol);
+    /**
+     * @brief modifica el documento de la persona.
+     * @param documento nuevo documento.
+     */
+    void setDocumento(int documento);
+    /**
+     * @brief modifica la edad de la persona.
+     * @param edad nueva edad.
+     */
+    void setEdad(int edad);
+    /**
+     * @brief obtiene el nombre de la persona.
+     * @return nombre de la persona.
+     */
+    std::string getNombre();
+     /**
+     * @brief obtiene rol de la persona.
+     * @return rol de la persona.
+     */
+    std::string getRol();
+     /**
+     * @brief obtiene documento de la persona.
+     * @return documento de la persona.
+     */
+    int getDocumento();
+     /**
+     * @brief obtiene edad de la persona.
+     * @return edad de la persona.
+     */
+    int getEdad();
+
+    void mostrarRol();
+
+    virtual void mostrarInformacion() =0;
 
 };
 #endif
