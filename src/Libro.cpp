@@ -37,43 +37,43 @@ Libro::Libro(std:: string titulo,std:: string autor,std::string disponible,int c
     }
 }
 
-void Libro::devolverLibro(){
+    void Libro::devolverLibro(){
 
     disponible = "Disponible";
 
     std::cout << "Libro devuelto correctamente" << std::endl;
-}
+    }
 
 // Getters
 
-int Libro::getCodigoLibro(){
+    int Libro::getCodigoLibro(){
 
     return codigoLibro;
-}
+    }
 
-std::string Libro::getDisponible(){
+    std::string Libro::getDisponible(){
 
-    return disponible;
-}
+      return disponible;
+    }
 
 // Setters
 
-void Libro::setTitulo(std::string titulo){
+    void Libro::setTitulo(std::string titulo){
 
     this->titulo = titulo;
-}
+    }
 
-void Libro::setAutor(std::string autor){
+    void Libro::setAutor(std::string autor){
 
     this->autor = autor;
-}
+    }
 
-void Libro::setDisponibles(std::string disponible){
+    void Libro::setDisponibles(std::string disponible){
 
     this->disponible = disponible;
-}
+    }
 
-void Libro::setCodigoLibro(int codigoLibro){
+    void Libro::setCodigoLibro(int codigoLibro){
 
     this->codigoLibro = codigoLibro;
-}
+    }
