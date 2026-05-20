@@ -60,6 +60,45 @@ int main(){
 
                 break;
             }
+             case 2:{
+
+                std::string nombre;
+                int documento;
+                int edad;
+                int codigoEmpleado;
+                int salario;
+
+                std::cout << std::endl;
+                std::cout << "Nombre: ";
+                getline(std::cin >> std::ws, nombre);
+
+                std::cout << "Documento: ";
+                std::cin >> documento;
+
+                std::cout << "Edad: ";
+                std::cin >> edad;
+
+                if(edad <= 0){
+
+                    std::cout << "Edad invalida" << std::endl;
+                    break;
+                }
+
+                std::cout << "Codigo Empleado: ";
+                std::cin >> codigoEmpleado;
+
+                std::cout << "Salario: ";
+                std::cin >> salario;
+
+                Bibliotecario nuevoBibliotecario(nombre, documento, edad, codigoEmpleado, salario);
+
+                bibliotecarios.push_back(nuevoBibliotecario);
+
+                std::cout << "Bibliotecario registrado correctamente" << std::endl;
+
+                break;
+            }
+
 
 
     }while();
