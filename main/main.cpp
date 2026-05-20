@@ -172,6 +172,20 @@ int main(){
 
                 break;
             }
+            case 7:{
+
+                if(libros.size() == 0){
+
+                    std::cout << "No hay libros registrados" << std::endl;
+                }
+
+                for(int i = 0; i < libros.size(); i++){
+
+                    libros[i].mostrarInformacion();
+                }
+
+                break;
+            }
 
 
 
