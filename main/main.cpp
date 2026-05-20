@@ -156,7 +156,21 @@ int main(){
                  }
                }
 
-                 break;
+             break;
+            }
+            case 6:{
+
+                if(usuarios.size() == 0){
+
+                    std::cout << "No hay usuarios registrados" << std::endl;
+                }
+
+                for(int i = 0; i < usuarios.size(); i++){
+
+                    usuarios[i].mostrarInformacion();
+                }
+
+                break;
             }
 
 
