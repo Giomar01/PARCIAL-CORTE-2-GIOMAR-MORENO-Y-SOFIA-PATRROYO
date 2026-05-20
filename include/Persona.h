@@ -68,8 +68,14 @@ class Persona{
      */
     int getEdad();
 
+    /**
+     * @brief muestra el rol de la persona.
+     */
     void mostrarRol();
 
+    /**
+     * @brief Metodo virtual puro para mostrar informacion.
+     */
     virtual void mostrarInformacion() =0;
 
 };
