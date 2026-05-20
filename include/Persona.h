@@ -23,7 +23,7 @@ class Persona{
      * @param documento documento de la persona.
      * @param edad Edad de la persona.
      */
-    Persona(std::string nombre, std::string rol, int documento, int edad );
+    Persona(std::string nombre, int documento, int edad );
 
     virtual ~Persona();
 
