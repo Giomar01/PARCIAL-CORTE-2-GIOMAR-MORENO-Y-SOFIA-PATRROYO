@@ -39,9 +39,19 @@ int main(){
 
                 std::cout << "Documento: ";
                 std::cin >> documento;
+                if(std::cin.fail()){
 
-                std::cout << "Edad: ";
-                std::cin >> edad;
+                 std::cout << "El documento debe ser numerico"<< std::endl;
+                
+
+                 std::cin.clear();
+                 std::cin.ignore(1000, '\n');
+                 break;
+                }
+
+                 std::cout << "Edad: ";
+                 std::cin >> edad;
+                 
 
                 if(edad <= 0){
 
@@ -51,6 +61,17 @@ int main(){
 
                 std::cout << "Codigo Usuario: ";
                 std::cin >> codigoUsuario;
+                 if(std::cin.fail()){
+
+                   std::cout << "El codigo debe ser numerico"<< std::endl;
+                    
+
+                   std::cin.clear();
+                   std::cin.ignore(1000, '\n');
+
+                  break;
+                 }
+
 
                 Usuario nuevoUsuario(nombre, documento, edad, codigoUsuario, 0);
 
@@ -74,7 +95,15 @@ int main(){
 
                 std::cout << "Documento: ";
                 std::cin >> documento;
+                if(std::cin.fail()){
 
+                   std::cout << "El documento debe ser numerico"<< std::endl;
+                
+
+                   std::cin.clear();
+                   std::cin.ignore(1000, '\n');
+                 break;
+                }
                 std::cout << "Edad: ";
                 std::cin >> edad;
 
@@ -86,9 +115,25 @@ int main(){
 
                 std::cout << "Codigo Empleado: ";
                 std::cin >> codigoEmpleado;
+                if(std::cin.fail()){
+
+                   std::cout << "El codigo del empleado debe ser numerico"<< std::endl;
+                   std::cin.clear();
+                   std::cin.ignore(1000, '\n');
+
+                 break;
+                }
 
                 std::cout << "Salario: ";
                 std::cin >> salario;
+                if(std::cin.fail()){
+
+                    std::cout << "El salario debe ser numerico" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(1000, '\n');
+
+                   break;
+                }
 
                 Bibliotecario nuevoBibliotecario(nombre, documento, edad, codigoEmpleado, salario);
 
@@ -112,7 +157,16 @@ int main(){
                 getline(std::cin >> std::ws, autor);
 
                 std::cout << "Codigo Libro: ";
-                std::cin >> codigoLibro;
+                std::cin >> codigoLibro; 
+                if(std::cin.fail()){
+
+                    std::cout << "El codigo del libro debe ser numerico"<< std::endl;
+                  
+                    std::cin.clear();
+                    std::cin.ignore(1000, '\n');
+
+                 break;
+                }
 
                 Libro nuevoLibro(titulo,autor,"Disponible", codigoLibro);
 
@@ -125,44 +179,96 @@ int main(){
             case 4:{
 
                 int codigoLibro;
-
+                int codigoUsuario;
+                int i,j;
                 std::cout << std::endl;
                 std::cout << "Codigo del libro: ";
                 std::cin >> codigoLibro;
 
-                for(int i = 0; i < libros.size(); i++){
+                std::cout << "Codigo del usuario: ";
+                std::cin >> codigoUsuario;
+
+                for( i = 0; i < libros.size(); i++){
 
                    if(libros[i].getCodigoLibro() == codigoLibro){
+                      if(libros[i].getDisponible() == "Disponible"){
+                         libros[i].prestarLibro();
+                      }
+                     else{
+                       std::cout << "El libro ya esta prestado\n";
+                       break;
+                     }
 
-                    libros[i].prestarLibro();
+                     break;
                    }
                 }
+                if (i == libros.size()) {
+                    std::cout << "Libro no encontrado"<< std::endl;
+                    break;
+                }
+                for( j = 0; j < usuarios.size(); j++){
 
-                 break;
+                   if(usuarios[j].getCodigoUsuario() == codigoUsuario){
+
+                    usuarios[j].setCantidadLibrosPrestados(usuarios[j].getCantidadLibrosPrestados() + 1 );
+                    break;
+                   }
+                }
+                if (j == usuarios.size()) {
+                  std::cout << "Usuario no encontrado"<< std::endl;
+                  break;
+                }
+                   std::cout << "Libro prestado correctamente"<< std::endl;
+                  break;
             }
             case 5:{
+                 int codigoLibro, codigoUsuario;
+                 int i, j;
 
-               int codigoLibro;
+                 std::cout << "Codigo del libro: ";
+                 std::cin >> codigoLibro;
 
-               std::cout << std::endl;
-               std::cout << "Codigo del libro: ";
-               std::cin >> codigoLibro;
+                 std::cout << "Codigo del usuario: ";
+                 std::cin >> codigoUsuario;
 
-               for(int i = 0; i < libros.size(); i++){
-
-                 if(libros[i].getCodigoLibro() == codigoLibro){
-
-                    libros[i].devolverLibro();
+                 for (i = 0; i < libros.size(); i++) {
+                   if (libros[i].getCodigoLibro() == codigoLibro) {
+                      libros[i].devolverLibro();
+                     break;
+                   }
                  }
-               }
 
-             break;
+                 if (i == libros.size()) {
+                  std::cout << "Libro no encontrado\n";
+                  break;
+                 }
+
+                 for (j = 0; j < usuarios.size(); j++) {
+
+                  if (usuarios[j].getCodigoUsuario() == codigoUsuario) {
+
+                   if (usuarios[j].getCantidadLibrosPrestados() > 0) {
+                    usuarios[j].setCantidadLibrosPrestados(usuarios[j].getCantidadLibrosPrestados() - 1);
+                   }
+
+                   break;
+                  }
+                 }
+                 if (j == usuarios.size()) {
+                   std::cout << "Usuario no encontrado\n";
+                   break;
+                 }
+
+                 std::cout << "Libro devuelto correctamente\n";
+
+                break;
             }
             case 6:{
 
                 if(usuarios.size() == 0){
 
                     std::cout << "No hay usuarios registrados" << std::endl;
+                    break;
                 }
 
                 for(int i = 0; i < usuarios.size(); i++){
@@ -177,6 +283,7 @@ int main(){
                 if(libros.size() == 0){
 
                     std::cout << "No hay libros registrados" << std::endl;
+                    break;
                 }
 
                 for(int i = 0; i < libros.size(); i++){
@@ -186,10 +293,21 @@ int main(){
 
                 break;
             }
+            case 8:{
+
+                std::cout << "Saliendo del sistema..." << std::endl;
+
+                break;
+            }
+
+            default:
+
+                std::cout << "Opcion invalida" << std::endl;
+        }
 
 
 
-    }while();
+    }while(opcion !=8);
 
     return 0;
 }
