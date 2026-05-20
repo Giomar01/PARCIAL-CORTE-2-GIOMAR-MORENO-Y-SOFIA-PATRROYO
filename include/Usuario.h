@@ -23,10 +23,29 @@ class Usuario : public Persona{
      */
      Usuario(std::string nombre, std::string rol, int documento, int edad, int codigoUsuario, int cantidadLibrosPrestados );
 
+     /**
+      * @brief modifica el codigo del usuario.
+      * @param codigoUsuario nuevo codigo.
+      */
      void setCodigoUsuario(int codigoUsuario);
+     /**
+      * @brief modifica la cantidad de libros prestada.
+      * @param cantidadLibrosPrestada    nueva cantidad
+      */
      void setCantidadLibrosPrestados(int cantidadLibrosPrestados);
+     /**
+      * @brief obtiene el codigo del usuario
+      * @return codigo usuario.
+      */
      int getCodigoUsuario();
+     /**
+      * @brief obtiene cantidad de libros prestada
+      * @return cantidad de libros.
+      */
      int getCantidadLibrosPrestados();
+     /**
+      * @brief muestra la informacion del usuario.
+      */
      void mostrarInformacion() override; 
 };
 #endif
