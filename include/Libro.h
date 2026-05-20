@@ -21,28 +21,34 @@ class Libro{
     public:
     /**
      * @brief Contructor de la clase Libro
-     * @param titulo del curso 
-     * @param autor del curso
-     * @param disponibles del curso 
-     * @param codigoLibro
+     * @param titulo del libro 
+     * @param autor del libro
+     * @param disponibles disponibilidad el libro
+     * @param codigoLibro del libro
      * 
      */
     Libro(std:: string titulo, std:: string autor, std:: string disponible, int codigoLibro);
 //Metodos 
 
 /**
- * @brief Muestra informacion del libro, presta y devuelve el libro
- * 
+ * @brief Muestra informacion del libro.
+ *
  */
 void mostrarInformacion();
+     /**
+     * @brief Presta el libro si esta disponible.
+     */
 void prestarLibro();
+     /**
+     * @brief Devuelve el libro.
+     */
 void devolverLibro();
   
 
 //Getters
 
     /**
-     * @brief obtiene el libro 
+     * @brief obtiene el  codigo del libro 
      * @return  libro 
      * 
      */
@@ -53,13 +59,24 @@ void devolverLibro();
     //Setters 
 
     /**
-     * @brief Modifica a la clase libro 
-     * @param titulo, autor, disponibles,codigoLibro
-     * 
+     * @brief Modifica el titulo del libro
+     * @param titulo nuevo titulo.
      */
     void setTitulo(std:: string titulo);
+     /**
+     * @brief Modifica el autor del libro
+     * @param autor nuevo autor.
+     */
     void setAutor(std:: string autor);
-    void setDisposnibles(std:: string disponibles);
+    /**
+     * @brief Modifica la disponibilidad
+     * @param disponibles nuevoa disponibilidad.
+     */
+    void setDisponibles(std:: string disponibles);
+     /**
+     * @brief modifica el codigo del libro.
+     * @param codigoLibro nuevo codigo del libro.
+     */
     void setCodigoLibro(int codigoLibro);
 
 };

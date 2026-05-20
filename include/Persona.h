@@ -11,7 +11,7 @@
  */
 class Persona{
     private:
-    std::string nombre, rol;
+    std::string nombre;
     int documento, edad;
 
     public:
@@ -32,11 +32,7 @@ class Persona{
      * @param nombre nuevo nombre.
      */
     void setNombre(std::string nombre);
-    /**
-     * @brief modifica el rol que desempeña la perosna.
-     * @param rol nuevo rol.
-     */
-    void setRol(std::string rol);
+   
     /**
      * @brief modifica el documento de la persona.
      * @param documento nuevo documento.
@@ -53,11 +49,6 @@ class Persona{
      */
     std::string getNombre();
      /**
-     * @brief obtiene rol de la persona.
-     * @return rol de la persona.
-     */
-    std::string getRol();
-     /**
      * @brief obtiene documento de la persona.
      * @return documento de la persona.
      */
@@ -71,7 +62,7 @@ class Persona{
     /**
      * @brief muestra el rol de la persona.
      */
-    void mostrarRol();
+    virtual void mostrarRol() =0;
 
     /**
      * @brief Metodo virtual puro para mostrar informacion.

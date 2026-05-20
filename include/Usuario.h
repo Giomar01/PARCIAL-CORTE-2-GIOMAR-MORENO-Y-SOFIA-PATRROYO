@@ -1,10 +1,10 @@
 #ifndef USUARIO_H
-#define Usuario_h
+#define USUARIO_h
 
 #include "Persona.h"
 /**
- * @class clase Estudiante.
- * @brief clase Estudiante heredada de Persona.
+ * @class clase Usuario.
+ * @brief clase Usuario heredada de Persona.
  */
 class Usuario : public Persona{
      private:
@@ -21,7 +21,7 @@ class Usuario : public Persona{
      * @param codigoUsuario codigo que tiene el usuario.
      * @param cantidadLibrosPrestados cantidad de libros que se le preto al usuario
      */
-     Usuario(std::string nombre, std::string rol, int documento, int edad, int codigoUsuario, int cantidadLibrosPrestados );
+     Usuario(std::string nombre, int documento, int edad, int codigoUsuario, int cantidadLibrosPrestados );
 
      /**
       * @brief modifica el codigo del usuario.
@@ -43,6 +43,10 @@ class Usuario : public Persona{
       * @return cantidad de libros.
       */
      int getCantidadLibrosPrestados();
+     /**
+      * @brief muestra el rol del usuario.
+      */
+     void mostrarRol() override;
      /**
       * @brief muestra la informacion del usuario.
       */

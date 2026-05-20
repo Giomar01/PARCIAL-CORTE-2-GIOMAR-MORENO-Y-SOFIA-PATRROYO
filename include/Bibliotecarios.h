@@ -14,7 +14,7 @@ private:
  int salario;
  public:
  /**
-  * @brief Constructor de clase persona 
+  * @brief Constructor de clase Bibliotecario 
   * @param nombre del biblotecario
   * @param documento del bibliotecario
   * @param edad del bibliotecario 
@@ -30,6 +30,10 @@ private:
   * 
   */ 
  void mostrarInformacion()override;
+     /**
+      * @brief muestra el rol del Bibliotecario.
+      */
+     void mostrarRol() override;
  
 
  //Getters 
@@ -45,10 +49,14 @@ private:
   //Setters 
 
   /**
-   * @brief Modifica el codigo del empleado y el salario 
-   * @param CodigoEmpleado,salario
+   * @brief Modifica el codigo del empleado
+   * @param CodigoEmpleado nuevo codigo.
    */
   void setCodigoEmpleado (int codigoEmpleado);
+  /**
+   * @brief modifica el salario del empleado
+   * @param salario nuevo salario
+   */
   void setSalario(int salario);
 };
 #endif
