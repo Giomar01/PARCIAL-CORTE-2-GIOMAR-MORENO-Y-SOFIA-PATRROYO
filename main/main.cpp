@@ -132,15 +132,32 @@ int main(){
 
                 for(int i = 0; i < libros.size(); i++){
 
-                if(libros[i].getCodigoLibro() == codigoLibro){
+                   if(libros[i].getCodigoLibro() == codigoLibro){
 
-                libros[i].prestarLibro();
-                }
+                    libros[i].prestarLibro();
+                   }
                 }
 
                  break;
             }
-            
+            case 5:{
+
+               int codigoLibro;
+
+               std::cout << std::endl;
+               std::cout << "Codigo del libro: ";
+               std::cin >> codigoLibro;
+
+               for(int i = 0; i < libros.size(); i++){
+
+                 if(libros[i].getCodigoLibro() == codigoLibro){
+
+                    libros[i].devolverLibro();
+                 }
+               }
+
+                 break;
+            }
 
 
 
