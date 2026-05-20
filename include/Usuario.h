@@ -23,6 +23,10 @@ class Usuario : public Persona{
      */
      Usuario(std::string nombre, std::string rol, int documento, int edad, int codigoUsuario, int cantidadLibrosPrestados );
 
-
+     void setCodigoUsuario(int codigoUsuario);
+     void setCantidadLibrosPrestados(int cantidadLibrosPrestados);
+     int getCodigoUsuario();
+     int getCantidadLibrosPrestados();
+     void mostrarInformacion() override; 
 };
 #endif
