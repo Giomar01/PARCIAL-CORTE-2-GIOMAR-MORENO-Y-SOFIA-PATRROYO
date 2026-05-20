@@ -26,6 +26,41 @@ int main(){
         std::cin >> opcion;
 
         switch(opcion){
+            case 1:{
+
+                std::string nombre;
+                int documento;
+                int edad;
+                int codigoUsuario;
+
+                std::cout << std::endl;
+                std::cout << "Nombre: ";
+                getline(std::cin >> std::ws, nombre);
+
+                std::cout << "Documento: ";
+                std::cin >> documento;
+
+                std::cout << "Edad: ";
+                std::cin >> edad;
+
+                if(edad <= 0){
+
+                    std::cout << "Edad invalida" << std::endl;
+                    break;
+                }
+
+                std::cout << "Codigo Usuario: ";
+                std::cin >> codigoUsuario;
+
+                Usuario nuevoUsuario(nombre, documento, edad, codigoUsuario, 0);
+
+                usuarios.push_back(nuevoUsuario);
+
+                std::cout << "Usuario registrado correctamente" << std::endl;
+
+                break;
+            }
+
 
     }while();
 
